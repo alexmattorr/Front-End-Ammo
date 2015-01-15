@@ -1,0 +1,13 @@
+{
+  "name": "Front-End-Ammo",
+  "version": "0.0.1",
+  "description": "Front End Framework for build sweet websites",
+  "main": "index.html",
+  "author": "Alexander Orr",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
