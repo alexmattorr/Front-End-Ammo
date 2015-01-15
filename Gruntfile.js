@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					sassDir: 'sass',
-					cssDir: 'css'
+					cssDir: 'css',
+					outputStyle: 'compressed'
 				}
 			}
 		},
@@ -20,3 +21,4 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask('default',['compass','watch']);
 }
+
