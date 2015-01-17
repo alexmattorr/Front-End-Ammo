@@ -7,7 +7,7 @@ Requirements:
 - grunt
 - bower
 
-Further reading on the technologies we're using:
+Technologies being used.
 ------------------------------------------------
 - stencil - http://olado.github.io/doT/index.html
 - grunt - http://gruntjs.com/getting-started
