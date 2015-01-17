@@ -62,5 +62,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-stencil');
-	grunt.registerTask('default',['compass','concat','watch']);
+	grunt.registerTask('default',[
+		'compass',
+		'concat',
+		'watch',
+		'stencil',
+		'uglify'
+	]);
 }

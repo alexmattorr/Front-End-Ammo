@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6" lang="en-US" dir="ltr"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en-US" dir="ltr"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en-US" dir="ltr"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en-US" dir="ltr"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en-US" dir="ltr"> <!--<![endif]-->
+<head>
+    <title>Front End Ammunition</title>
+    <meta name="viewport"    content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="../assets/style/min/style.css" rel="stylesheet" />
+</head>
+
+<body >
+    <div id="container" {{? it.document.class}}class="{{= it.document.class }}"{{?}} >
+        <!-- header -->
+        {{= it.include("header") }}
+        <!-- content -->
+        <div id="content">
+            {{= it.document }}
+        </div>
+        <!-- footer -->
+        {{= it.include("footer") }}
+    </div>
+</body>
+</html>
