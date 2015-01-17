@@ -5,15 +5,15 @@ module.exports = function(grunt) {
 		compass: {
 			dist: {
 				options: {
-					sassDir: 'sass',
-					cssDir: 'css',
+					sassDir: 'assets/sass',
+					cssDir: 'dist/css',
 					outputStyle: 'compressed'
 				}
 			}
 		},
 		watch: {
 			css: {
-				files: '**/*.scss',
+				files: 'assets/sass/*.scss',
 				tasks: ['compass']
 			}
 		},
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
 				separator: ';',
 			},
 			dist: {
-				src: ['js/scripts/*.js'],
-				dest: 'js/built.js',
+				src: ['assets/scripts/*.js'],
+				dest: 'dist/js/built.js',
 			},
 		},
 		uglify: {
@@ -32,15 +32,35 @@ module.exports = function(grunt) {
 			},
 			my_target: {
 				files: {
-					'js/built.min.js': ['js/built.js']
+					'dist/js/built.min.js': ['js/built.js']
 				}
 			}
+		},
+		stencil: {
+			main: {
+				options: {
+					env: {
+						title: "Stencil",
+					},
+					partials: "assets/templates/base",
+					templates: "assets/templates"
+				},
+				files: [{
+					expand: true,
+					src: 'assets/templates/pages/**/*.dot.html',
+                     				dest: 'dist/html',
+                     				ext: ".html",
+                     				flatten: true
+				}]
+			}
 		}
+
 
 	});
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-stencil');
 	grunt.registerTask('default',['compass','concat','watch']);
 }
